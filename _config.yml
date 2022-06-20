@@ -24,7 +24,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: 테마 입힌 페이지
+title: GithubPage 연습실
 email: acensia@naver.com
 author: Navongs
 
