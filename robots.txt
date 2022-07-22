@@ -1,0 +1,1 @@
+Sitemap: https://navongs.github.io/jekyll-theme-yat/sitemap.xml
