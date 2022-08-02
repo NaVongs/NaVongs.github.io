@@ -3,22 +3,27 @@ layout: post
 title: JS 입문
 subtitle: JavaScript
 categories: Language
-tags: [JS]
+tags: [JS, Nomad Coder, web]
 ---
 
 
 
 ## Type of Variables
-var : editable, comprehensive type
-let : editable
-const : uneditable
+
+
+| Type | editable | etc |
+| :------ |:--- | :--- |
+| var | editable | . |
+| let | editable | . |
+| const | uneditable | . |
 
 ## Various form of data container
-array(list) : classic array
-object : similar with class
-function
+array(list) : classic array  
+object : similar with class  
+function : classic function
 
-{% highlight ruby %}
+
+{% highlight javascript %}
 let array1 = [0, 1, 2, "data"];
 const object1 = {
     property1 : 3,
