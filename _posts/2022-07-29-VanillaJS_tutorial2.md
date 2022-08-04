@@ -2,7 +2,7 @@
 layout: post
 title: JS 입문 2
 subtitle: JavaScript
-categories: Language
+categories: CloneCoding
 tags: [JS, Nomad Coder, Web]
 ---
 
