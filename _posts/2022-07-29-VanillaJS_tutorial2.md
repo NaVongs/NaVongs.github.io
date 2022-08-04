@@ -3,7 +3,7 @@ layout: post
 title: JS 입문 2
 subtitle: JavaScript
 categories: Language
-tags: [JS, Nomad Coder, web]
+tags: [JS, Nomad Coder, Web]
 ---
 
 
@@ -42,7 +42,8 @@ We can use 'console' object to check condition of object: console.log, console.d
 function handleTitleClick(){
     console.log("title was clicked!");
     title.innerText = "title Clicked!";
-    title.style.color = "red";
+    title.style.color = "red"; //changing CSS w/ JS
+    
 }
 
 
@@ -50,3 +51,44 @@ title.addEventListener("click", handleTitleClick);
 {% endhighlight %}
 
 We can 'listen' events of HTML: name of properties starts with 'on'. Name of events can be also found googling 'Web APIs'.
+
+Anothe way to check event is using *oneventname* properties.
+But handling branch with changing classname can make some problem: cause it loses previous name.
+
+**Use CSS class to toggle**
+{% highlight javascript %}
+function handleTitleClick(){
+    const clickedClass = "clicked";
+    if(h1.classList.contains(clickedClass)){
+        h1.classList.remove(clickedClass);
+    }
+    else{
+        h1.classList.add(clickedClass);
+    }
+    
+}
+
+
+h1.addEventListener("click", handleTitleClick);
+{% endhighlight %}
+
+{% highlight CSS %}
+h1{
+    color: green;
+}
+
+.some{
+    color:#ff00ff;
+}
+
+.clicked{
+    color: #00aaaa;
+    font-family: 'Courier New', Courier, monospace;
+    transition: color 0.5s ease-in-out
+}
+
+{% endhighlight %}
+
+*※When other settings are the same, CSS class below is applied.* 
+
+

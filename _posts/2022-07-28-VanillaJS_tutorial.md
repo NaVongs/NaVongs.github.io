@@ -3,7 +3,7 @@ layout: post
 title: JS 입문
 subtitle: JavaScript
 categories: Language
-tags: [JS, Nomad Coder, web]
+tags: [JS, Nomad Coder, Web]
 ---
 
 
