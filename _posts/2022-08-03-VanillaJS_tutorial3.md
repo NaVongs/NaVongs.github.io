@@ -38,4 +38,26 @@ String merge can be done in the way as:
 
 
 ## Storage ##
-API "localStorage" let browser be able to store some values. It store data although a page is reloaded.
+API "localStorage" let browser be able to store some values. It store data although a page is reloaded. It can be used to save ID lists.  
+
+{% highlight javascript %}
+function onLoginSubmit(event) {
+    event.preventDefault();
+    loginForm.classList.add(HIDDEN_CLASS);
+    const username = loginInput.value;
+    localStorage.setItem(USERNAME_KEY, username);
+    showGreetings(username);
+}
+
+function onLogoutSubmit_diy(event){
+    event.preventDefault();
+    localStorage.removeItem(USERNAME_KEY);
+    loginForm.classList.remove(HIDDEN_CLASS);
+    greeting.classList.add(HIDDEN_CLASS);
+    loginForm.addEventListener("submit", onLoginSubmit);
+    logoutForm.classList.add(HIDDEN_CLASS);
+}
+{% endhighlight %}
+
+*I tried adding a logout button by removing ID from localStorage: It works.*
+
