@@ -42,7 +42,7 @@ TS uses value types of JS.
 
 Here is TS's charecteristic types:  
 | readyonly | make values read-only |
-| tuple | give each element type explicity |
+| tuple | specify an array with a min length and type position |
 | any | take type explicity away (like JS) |
-| unknown | used when you need to act after knowing type of var |
-| never | used when function never returns |
+| unknown | used when you need to act after knowing type of var(w/ typeof) |
+| never | used when a path of code should never run |
