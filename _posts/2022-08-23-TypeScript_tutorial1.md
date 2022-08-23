@@ -40,6 +40,9 @@ const func2 = (para: string) : type_name => ({para});
 TS can give a value type explicity with the way above.  
 TS uses value types of JS.  
 
+Here is TS's charecteristic types:  
 | readyonly | make values read-only |
 | tuple | give each element type explicity |
 | any | take type explicity away (like JS) |
+| unknown | used when you need to act after knowing type of var |
+| never | used when function never returns |
