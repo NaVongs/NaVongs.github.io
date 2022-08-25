@@ -41,6 +41,7 @@ TS can give a value type explicity with the way above.
 TS uses value types of JS.  
 
 Here is TS's charecteristic types:  
+| :------ |:--- |
 | readyonly | make values read-only | 
 | tuple | specify an array with a min length and type position | 
 | any | take type explicity away (like JS) | 
