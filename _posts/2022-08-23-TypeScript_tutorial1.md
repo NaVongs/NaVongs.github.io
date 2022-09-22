@@ -41,9 +41,27 @@ TS can give a value type explicity with the way above.
 TS uses value types of JS.  
 
 Here is TS's charecteristic types:  
-| :------ |:--- |
-| readyonly | make values read-only | 
-| tuple | specify an array with a min length and type position | 
-| any | take type explicity away (like JS) | 
-| unknown | used when you need to act after knowing type of var(w/ typeof) | 
-| never | used when a path of code should never run | 
+
+| readyonly | make values read-only |
+| tuple | specify an array with a min length and type position |
+| any | take type explicity away (like JS) |
+| unknown | used when you need to act after knowing type of var(w/ typeof) |
+| never | used when a path of code should never run |
+
+## Call Signature
+
+When writing a function as variable form, to avoid duplicating arguments' type, you use "Call Signature" to assign args' type as object-form.
+
+{% highlight TypeScript %}
+type math = (a:number, b:number) => number;
+const add:math = (a,b) => a+b;
+
+type math3 = (a:nnumber, b:number, c?:number) => number;
+const add3:math3 = (a, b, c) => {
+    if(c) return a+b+c;
+    return a+b;
+}
+
+{% endhighlight %}
+
+## Polymorphism
