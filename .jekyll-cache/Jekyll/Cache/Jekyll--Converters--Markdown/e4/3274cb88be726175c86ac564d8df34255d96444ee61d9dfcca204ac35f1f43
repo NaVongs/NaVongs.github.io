@@ -1,0 +1,30 @@
+I"œ<h2 id="1">1.</h2>
+
+<figure class="highlight"><pre><code class="language-typescript" data-lang="typescript"><span class="kd">type</span> <span class="nx">Arrays</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="na">arr</span><span class="p">:</span><span class="nx">T</span><span class="p">[],</span> <span class="nx">item</span><span class="p">?:</span><span class="nx">T</span><span class="p">)</span> <span class="p">:</span> <span class="nx">T</span>
+    <span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="na">arr</span><span class="p">:</span><span class="nx">T</span><span class="p">[],</span> <span class="nx">item</span><span class="p">?:</span><span class="nx">T</span><span class="p">)</span> <span class="p">:</span> <span class="nx">T</span><span class="p">[]</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">last</span> <span class="p">:</span> <span class="nx">Arrays</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">prepend</span> <span class="p">:</span> <span class="nx">Arrays</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-typescript" data-lang="typescript"><span class="kd">type</span> <span class="nx">elem</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="na">arr</span><span class="p">:</span><span class="nx">T</span><span class="p">[])</span> <span class="p">:</span> <span class="nx">T</span>
+<span class="p">}</span>
+<span class="kd">type</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="na">arr</span><span class="p">:</span><span class="nx">T</span><span class="p">[],</span> <span class="na">item</span><span class="p">:</span><span class="nx">T</span><span class="p">)</span> <span class="p">:</span> <span class="nx">T</span><span class="p">[]</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">last</span> <span class="p">:</span> <span class="nx">elem</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">prepend</span> <span class="p">:</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+:ET

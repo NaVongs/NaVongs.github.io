@@ -1,0 +1,20 @@
+I"�<h2 id="error-code--eacces--permission-denied">Error code : EACCES : permission denied</h2>
+
+<p><img src="/assets/images/src/1121_1.JPG" alt="err1" />
+<img src="/assets/images/src/1121_2.JPG" alt="err2" /></p>
+
+<p>WSL VScode error occured, so I googled “WSL vscode permission denied”. I found the <a href="https://velog.io/@gidskql6671/VSCode-WSL%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC-%EB%B3%80%EA%B2%BD%EC%8B%9CPermission-denied-%ED%95%B4%EA%B2%B0">link</a>.</p>
+
+<p>I followed 1st way.</p>
+
+<p><img src="/assets/images/src/1121_3.JPG" alt="err3" />
+<img src="/assets/images/src/1121_4.JPG" alt="err4" />
+Another error message popped up.</p>
+
+<p><img src="/assets/images/src/1121_5.JPG" alt="err5" />
+I tried to figure out the reason in connection with git user, but it was just the account of git user.email.</p>
+
+<p><img src="/assets/images/src/1121_6.JPG" alt="err6" />
+VScode on WSL users had already encountered the problem.</p>
+
+:ET

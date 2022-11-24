@@ -1,4 +1,4 @@
-I"�<h2 id="typescript">TypeScript</h2>
+I")<h2 id="typescript">TypeScript</h2>
 <p>To complement type explicity of JavaScript<br />
 Compiled as JavaScript<br />
 Required software : Nodejs</p>
@@ -57,4 +57,18 @@ TS uses value types of JS.</p>
   </tbody>
 </table>
 
+<h2 id="call-signature">Call Signature</h2>
+
+<p>When writing a function as variable form, to avoid duplicating arguments’ type, you use “Call Signature” to assign args’ type as object-form.</p>
+
+<figure class="highlight"><pre><code class="language-typescript" data-lang="typescript"><span class="kd">type</span> <span class="nx">math</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">:</span><span class="kr">number</span><span class="p">,</span> <span class="nx">b</span><span class="p">:</span><span class="kr">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="kr">number</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">add</span><span class="p">:</span><span class="nx">math</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">;</span>
+
+<span class="kd">type</span> <span class="nx">math3</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">:</span><span class="nx">nnumber</span><span class="p">,</span> <span class="nx">b</span><span class="p">:</span><span class="kr">number</span><span class="p">,</span> <span class="nx">c</span><span class="p">?:</span><span class="kr">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="kr">number</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">add3</span><span class="p">:</span><span class="nx">math3</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="k">return</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="o">+</span><span class="nx">c</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="polymorphism">Polymorphism</h2>
 :ET
