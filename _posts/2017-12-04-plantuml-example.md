@@ -1,9 +1,12 @@
 ---
 layout: post
 title: Plantuml example
-categories: example
+categories: md_sample
 tags: [plantuml]
 ---
+
+Categories: example   
+
 
 ## My First PlantUML
 

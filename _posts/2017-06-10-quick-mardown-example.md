@@ -2,9 +2,12 @@
 layout: post
 title: Quick markdown example
 subtitle: This is a quick markdown example
-categories: markdown
+categories: md_sample
 tags: [example]
 ---
+
+Categories: markdown   
+
 
 Paragraphs are separated by a blank line.
 

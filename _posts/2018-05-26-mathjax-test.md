@@ -2,9 +2,12 @@
 layout: post
 title: Mathjax Test
 subtitle: My first mathjax expression
-categories: markdown
+categories: md_sample
 tags: [test]
 ---
+
+Categories: markdown   
+
 
 * A safe integer is an integer that
   * can be exactly represented as an IEEE-754 double precision number, and

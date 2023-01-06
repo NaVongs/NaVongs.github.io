@@ -3,7 +3,7 @@ layout: post
 title: Welcome to Jekyll!
 subtitle: A awesome static site generator.
 author: Jeffrey
-categories: jekyll
+categories: md_sample
 banner:
   video: https://vjs.zencdn.net/v/oceans.mp4
   loop: true
@@ -19,6 +19,9 @@ banner:
 tags: jekyll theme yat
 sidebar: []
 ---
+
+Categories: jekyll   
+
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 

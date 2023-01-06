@@ -2,9 +2,12 @@
 layout: post
 title: An exhibit of Markdown
 subtitle: Each post also has a subtitle
-categories: markdown
+categories: md_sample
 tags: [example, markdown]
 ---
+
+Categories: markdown   
+
 
 This note demonstrates some of what [Markdown][1] is capable of doing.
 
