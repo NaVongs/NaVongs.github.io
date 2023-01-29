@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://navongs.github.io/jekyll-theme-yat/feed.xml" rel="self" type="application/atom+xml" /><link href="https://navongs.github.io/jekyll-theme-yat/" rel="alternate" type="text/html" /><updated>2023-01-29T07:20:45+00:00</updated><id>https://navongs.github.io/jekyll-theme-yat/feed.xml</id><title type="html">GithubPage 연습실</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>Navongs</name></author><entry><title type="html">ReactJS practice</title><link href="https://navongs.github.io/jekyll-theme-yat/nomadcoders/2023/01/29/ReactJS.html" rel="alternate" type="text/html" title="ReactJS practice" /><published>2023-01-29T00:00:00+00:00</published><updated>2023-01-29T00:00:00+00:00</updated><id>https://navongs.github.io/jekyll-theme-yat/nomadcoders/2023/01/29/ReactJS</id><content type="html" xml:base="https://navongs.github.io/jekyll-theme-yat/nomadcoders/2023/01/29/ReactJS.html"><![CDATA[<h2 id="render">Render</h2>
+<pre><code class="language-React">ReactDOM.render(&lt;function /&gt;, rootTag)
+</code></pre>
+
+<p>React uses “rendering” to implement HTML elements as JS.</p>
+
+<h2 id="state">State</h2>
+
+<pre><code class="language-React">const [ value, setValue ] = React.useState("initValue");
+
+setValue("otherValue");
+</code></pre>
+
+<p>“State” lets React change elements by re-rendering. React mostly re-renders elements that only has changed.</p>
+
+<h2 id="props">Props</h2>
+
+<pre><code class="language-React">function Something(props) {
+    console.log(props.val);
+}
+
+function Nothing({ val }) {
+    console.log(val);
+}
+
+function App() {
+    return (
+        &lt;div&gt;
+            &lt;Something val="value" /&gt;
+            &lt;Something val="value2" /&gt;
+            &lt;Nothing val="value3" /&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre>
+
+<p>“Props” is the way that React functions receive components. Function can change a text or value using props and states.</p>
+
+<pre><code class="language-React">function Something({ val, func }) {
+    return(
+        &lt;button onClick={func}&gt; Btn &lt;/button&gt;
+    )
+}
+
+function App() {
+    const [value, setValue] = React.useState("value1");
+    const change = () =&gt; setValue(value + 1);
+    return (
+        &lt;div&gt;
+            &lt;Something val={value} func={change}/&gt;
+            &lt;Something val="value2" /&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre>
+
+<p>But in some case, React re-render element that doesn’t change(in upper case, the second <code class="language-plaintext highlighter-rouge">&lt;Something /&gt;</code>). “Memo” is used to prevent this problem.</p>
+
+<pre><code class="language-React">function Something({ val, func }) {
+    return(
+        &lt;button onClick={func}&gt; Btn &lt;/button&gt;
+    )
+}
+
+const MemorizedSomething = React.memo(Somethig);
+
+function App() {
+    const [value, setValue] = React.useState("value1");
+    const change = () =&gt; setValue(value + 1);
+    return (
+        &lt;div&gt;
+            &lt;MemorizedSomething val={value} func={change}/&gt;
+            &lt;MemorizedSomething val="value2" /&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre>
+
+<p>Than the second <code class="language-plaintext highlighter-rouge">&lt;Something&gt;</code> won’t be re-rendered.</p>]]></content><author><name>Navongs</name></author><category term="NomadCoders" /><category term="JS" /><category term="React" /><category term="Nomad Coder" /><summary type="html"><![CDATA[Render ReactDOM.render(&lt;function /&gt;, rootTag)]]></summary></entry><entry><title type="html">Error Diary</title><link href="https://navongs.github.io/jekyll-theme-yat/error/2022/11/21/ErrorDiary.html" rel="alternate" type="text/html" title="Error Diary" /><published>2022-11-21T00:00:00+00:00</published><updated>2022-11-21T00:00:00+00:00</updated><id>https://navongs.github.io/jekyll-theme-yat/error/2022/11/21/ErrorDiary</id><content type="html" xml:base="https://navongs.github.io/jekyll-theme-yat/error/2022/11/21/ErrorDiary.html"><![CDATA[<h2 id="error-code--eacces--permission-denied">Error code : EACCES : permission denied</h2>
+
+<p><img src="/assets/images/src/1121_1.JPG" alt="err1" />
+<img src="/assets/images/src/1121_2.JPG" alt="err2" /></p>
+
+<p>WSL VScode error occured, so I googled “WSL vscode permission denied”. I found the <a href="https://velog.io/@gidskql6671/VSCode-WSL%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC-%EB%B3%80%EA%B2%BD%EC%8B%9CPermission-denied-%ED%95%B4%EA%B2%B0">link</a>.</p>
+
+<p>I followed 1st way.</p>
+
+<p><img src="/assets/images/src/1121_3.JPG" alt="err3" />
+<img src="/assets/images/src/1121_4.JPG" alt="err4" />
+Another error message popped up.</p>
+
+<p><img src="/assets/images/src/1121_5.JPG" alt="err5" />
+I tried to figure out the reason in connection with git user, but it was just the account of git user.email.</p>
+
+<p><img src="/assets/images/src/1121_6.JPG" alt="err6" />
+VScode on WSL users had already encountered the problem.</p>]]></content><author><name>Navongs</name></author><category term="Error" /><category term="Error" /><category term="Googling" /><summary type="html"><![CDATA[Error code : EACCES : permission denied]]></summary></entry><entry><title type="html">TypeScript Problems</title><link href="https://navongs.github.io/jekyll-theme-yat/nomadcoders/2022/09/23/TS_Ass.html" rel="alternate" type="text/html" title="TypeScript Problems" /><published>2022-09-23T00:00:00+00:00</published><updated>2022-09-23T00:00:00+00:00</updated><id>https://navongs.github.io/jekyll-theme-yat/nomadcoders/2022/09/23/TS_Ass</id><content type="html" xml:base="https://navongs.github.io/jekyll-theme-yat/nomadcoders/2022/09/23/TS_Ass.html"><![CDATA[<h2 id="1">1.</h2>
+
+<figure class="highlight"><pre><code class="language-typescript" data-lang="typescript"><span class="kd">type</span> <span class="nx">Arrays</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="na">arr</span><span class="p">:</span><span class="nx">T</span><span class="p">[],</span> <span class="nx">item</span><span class="p">?:</span><span class="nx">T</span><span class="p">)</span> <span class="p">:</span> <span class="nx">T</span>
+    <span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="na">arr</span><span class="p">:</span><span class="nx">T</span><span class="p">[],</span> <span class="nx">item</span><span class="p">?:</span><span class="nx">T</span><span class="p">)</span> <span class="p">:</span> <span class="nx">T</span><span class="p">[]</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">last</span> <span class="p">:</span> <span class="nx">Arrays</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">prepend</span> <span class="p">:</span> <span class="nx">Arrays</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-typescript" data-lang="typescript"><span class="kd">type</span> <span class="nx">elem</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="na">arr</span><span class="p">:</span><span class="nx">T</span><span class="p">[])</span> <span class="p">:</span> <span class="nx">T</span>
+<span class="p">}</span>
+<span class="kd">type</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="na">arr</span><span class="p">:</span><span class="nx">T</span><span class="p">[],</span> <span class="na">item</span><span class="p">:</span><span class="nx">T</span><span class="p">)</span> <span class="p">:</span> <span class="nx">T</span><span class="p">[]</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">last</span> <span class="p">:</span> <span class="nx">elem</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">prepend</span> <span class="p">:</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>]]></content><author><name>Navongs</name></author><category term="NomadCoders" /><category term="JS" /><category term="TS" /><category term="Nomad Coder" /><category term="Nodejs" /><category term="prob" /><summary type="html"><![CDATA[1.]]></summary></entry><entry><title type="html">TypeScript</title><link href="https://navongs.github.io/jekyll-theme-yat/nomadcoders/2022/08/23/TypeScript_tutorial1.html" rel="alternate" type="text/html" title="TypeScript" /><published>2022-08-23T00:00:00+00:00</published><updated>2022-08-23T00:00:00+00:00</updated><id>https://navongs.github.io/jekyll-theme-yat/nomadcoders/2022/08/23/TypeScript_tutorial1</id><content type="html" xml:base="https://navongs.github.io/jekyll-theme-yat/nomadcoders/2022/08/23/TypeScript_tutorial1.html"><![CDATA[<h2 id="typescript">TypeScript</h2>
+<p>To complement type explicity of JavaScript<br />
+Compiled as JavaScript<br />
+Required software : Nodejs</p>
+
+<h2 id="type-of-ts">Type of TS</h2>
+
+<figure class="highlight"><pre><code class="language-typescript" data-lang="typescript"><span class="kd">const</span> <span class="nx">val</span> <span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">hi</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">object</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="nl">args1</span> <span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
+    <span class="nx">args2</span> <span class="p">:</span> <span class="kr">number</span><span class="p">,</span>
+<span class="p">}</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">args1</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">hi</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">args2</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="kd">type</span> <span class="nx">type_name</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">args1</span> <span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
+    <span class="nx">args2</span><span class="p">?</span> <span class="p">:</span> <span class="kr">number</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">obj2</span> <span class="p">:</span> <span class="nx">type_name</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">args1</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">func1</span><span class="p">(</span><span class="nx">para</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">:</span> <span class="nx">type_name</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">para</span><span class="p">,</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">func2</span> <span class="o">=</span> <span class="p">(</span><span class="nx">para</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">:</span> <span class="nx">type_name</span> <span class="o">=&gt;</span> <span class="p">({</span><span class="nx">para</span><span class="p">});</span></code></pre></figure>
+
+<p>TS can give a value type explicity with the way above.<br />
+TS uses value types of JS.</p>
+
+<p>Here is TS’s charecteristic types:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>readyonly</td>
+      <td>make values read-only</td>
+    </tr>
+    <tr>
+      <td>tuple</td>
+      <td>specify an array with a min length and type position</td>
+    </tr>
+    <tr>
+      <td>any</td>
+      <td>take type explicity away (like JS)</td>
+    </tr>
+    <tr>
+      <td>unknown</td>
+      <td>used when you need to act after knowing type of var(w/ typeof)</td>
+    </tr>
+    <tr>
+      <td>never</td>
+      <td>used when a path of code should never run</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="call-signature">Call Signature</h2>
+
+<p>When writing a function as variable form, to avoid duplicating arguments’ type, you use “Call Signature” to assign args’ type as object-form.</p>
+
+<figure class="highlight"><pre><code class="language-typescript" data-lang="typescript"><span class="kd">type</span> <span class="nx">math</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">:</span><span class="kr">number</span><span class="p">,</span> <span class="nx">b</span><span class="p">:</span><span class="kr">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="kr">number</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">add</span><span class="p">:</span><span class="nx">math</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">;</span>
+
+<span class="kd">type</span> <span class="nx">math3</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">:</span><span class="nx">nnumber</span><span class="p">,</span> <span class="nx">b</span><span class="p">:</span><span class="kr">number</span><span class="p">,</span> <span class="nx">c</span><span class="p">?:</span><span class="kr">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="kr">number</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">add3</span><span class="p">:</span><span class="nx">math3</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="k">return</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="o">+</span><span class="nx">c</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="polymorphism">Polymorphism</h2>]]></content><author><name>Navongs</name></author><category term="NomadCoders" /><category term="JS" /><category term="TS" /><category term="Nomad Coder" /><category term="Nodejs" /><summary type="html"><![CDATA[TypeScript To complement type explicity of JavaScript Compiled as JavaScript Required software : Nodejs]]></summary></entry><entry><title type="html">Zoom 클론코딩 2</title><link href="https://navongs.github.io/jekyll-theme-yat/nomadcoders/2022/08/12/ZoomClone_tutorial2.html" rel="alternate" type="text/html" title="Zoom 클론코딩 2" /><published>2022-08-12T00:00:00+00:00</published><updated>2022-08-12T00:00:00+00:00</updated><id>https://navongs.github.io/jekyll-theme-yat/nomadcoders/2022/08/12/ZoomClone_tutorial2</id><content type="html" xml:base="https://navongs.github.io/jekyll-theme-yat/nomadcoders/2022/08/12/ZoomClone_tutorial2.html"><![CDATA[<h2 id="socketio">Socket.io</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//app.js</span>
+<span class="kd">function</span> <span class="nx">func</span><span class="p">(</span><span class="nx">arg</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arg</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="nx">socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="dl">"</span><span class="s2">my_msg</span><span class="dl">"</span><span class="p">,</span> <span class="nx">argument</span><span class="p">,</span> <span class="nx">func</span><span class="p">);</span>
+
+<span class="c1">//server.js</span>
+<span class="kd">const</span> <span class="nx">elem</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">in server</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">my_msg</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">msg</span><span class="p">,</span> <span class="nx">done</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">//msg is argument</span>
+    <span class="nx">done</span><span class="p">(</span><span class="nx">elem</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Using emit and on, frontend can send function to backend, then backend calling function to be activated in frontend, can send backend data to frontend.</p>]]></content><author><name>Navongs</name></author><category term="NomadCoders" /><category term="JS" /><category term="Nomad Coder" /><category term="Nodejs" /><summary type="html"><![CDATA[Socket.io]]></summary></entry><entry><title type="html">Zoom 클론코딩</title><link href="https://navongs.github.io/jekyll-theme-yat/nomadcoders/2022/08/09/ZoomClone_tutorial.html" rel="alternate" type="text/html" title="Zoom 클론코딩" /><published>2022-08-09T00:00:00+00:00</published><updated>2022-08-09T00:00:00+00:00</updated><id>https://navongs.github.io/jekyll-theme-yat/nomadcoders/2022/08/09/ZoomClone_tutorial</id><content type="html" xml:base="https://navongs.github.io/jekyll-theme-yat/nomadcoders/2022/08/09/ZoomClone_tutorial.html"><![CDATA[<h2 id="pre-settings">Pre-settings</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Requirement</td>
+      <td>nvm, nodejs, Express, Pug, app.get(), Babel, nodemon</td>
+    </tr>
+    <tr>
+      <td>Knowledge</td>
+      <td>app.get(), (req, res), package.json</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>I followed the steps below:</p>
+<ol>
+  <li>Create package.json file.</li>
+  <li>Install nodemon and babel.</li>
+  <li>Create js file for server.</li>
+  <li>Install express and pug.</li>
+  <li>Import express on js file.</li>
+</ol>
+
+<p>And then write some settings on server.js file.</p>
+
+<h2 id="background-knowledge">Background Knowledge</h2>
+<h1 id="http-vs-websocket">http vs WebSocket</h1>
+
+<p>http : user sends request and server sends response, stateless(server can’t remember user, then user send cookie to let server reply)</p>
+
+<p>WebSocket : connection establised when user sends request, able to access bi-directionally.</p>]]></content><author><name>Navongs</name></author><category term="NomadCoders" /><category term="JS" /><category term="Nomad Coder" /><category term="Nodejs" /><summary type="html"><![CDATA[Pre-settings]]></summary></entry><entry><title type="html">JS 입문 3</title><link href="https://navongs.github.io/jekyll-theme-yat/nomadcoders/2022/08/03/VanillaJS_tutorial3.html" rel="alternate" type="text/html" title="JS 입문 3" /><published>2022-08-03T00:00:00+00:00</published><updated>2022-08-03T00:00:00+00:00</updated><id>https://navongs.github.io/jekyll-theme-yat/nomadcoders/2022/08/03/VanillaJS_tutorial3</id><content type="html" xml:base="https://navongs.github.io/jekyll-theme-yat/nomadcoders/2022/08/03/VanillaJS_tutorial3.html"><![CDATA[<h2 id="button-input-blank-hyperlink">Button, Input blank, Hyperlink</h2>
+<p><strong>HTML elements</strong></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button&gt;</span> <span class="nt">&lt;/button&gt;</span>  
+<span class="nt">&lt;input</span> <span class="nt">/&gt;</span>  
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">""</span><span class="nt">&gt;&lt;/a&gt;</span>
+
+<span class="nt">&lt;form&gt;</span> <span class="nt">&lt;/form&gt;</span></code></pre></figure>
+
+<p>“Button” can be operated listening <em>click</em> event.<br />
+“Input” can get input value: stored in <em>value</em> property.<br />
+“Form” let JS use functions of browser.</p>
+
+<p>But when form ‘submit’(it’s default movement) something, it reload the page. So we have to block it with “<em>argument</em>.preventDefault()”.</p>
+
+<p>CSS can hide some HTML elements using class:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.hidden</span><span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>and show another elements with adding and unsealing(removing hidden class).<br />
+String merge can be done in the way as:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="o">*</span><span class="nx">classname</span><span class="o">*</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="s2">`Hello </span><span class="p">${</span><span class="o">*</span><span class="nx">stringname</span><span class="o">*</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span></code></pre></figure>
+
+<h2 id="storage">Storage</h2>
+<p>API “localStorage” let browser be able to store some values. It store data although a page is reloaded. It can be used to save ID lists.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">onLoginSubmit</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+    <span class="nx">loginForm</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">HIDDEN_CLASS</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">username</span> <span class="o">=</span> <span class="nx">loginInput</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+    <span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="nx">USERNAME_KEY</span><span class="p">,</span> <span class="nx">username</span><span class="p">);</span>
+    <span class="nx">showGreetings</span><span class="p">(</span><span class="nx">username</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">onLogoutSubmit_diy</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+    <span class="nx">localStorage</span><span class="p">.</span><span class="nx">removeItem</span><span class="p">(</span><span class="nx">USERNAME_KEY</span><span class="p">);</span>
+    <span class="nx">loginForm</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">HIDDEN_CLASS</span><span class="p">);</span>
+    <span class="nx">greeting</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">HIDDEN_CLASS</span><span class="p">);</span>
+    <span class="nx">loginForm</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span><span class="p">,</span> <span class="nx">onLoginSubmit</span><span class="p">);</span>
+    <span class="nx">logoutForm</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">HIDDEN_CLASS</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><em>I tried adding a logout button by removing ID from localStorage: It works.</em></p>]]></content><author><name>Navongs</name></author><category term="NomadCoders" /><category term="JS" /><category term="Nomad Coder" /><category term="Web" /><summary type="html"><![CDATA[Button, Input blank, Hyperlink HTML elements &lt;button&gt; &lt;/button&gt; &lt;input /&gt; &lt;a href=""&gt;&lt;/a&gt;]]></summary></entry><entry><title type="html">JS 입문 2</title><link href="https://navongs.github.io/jekyll-theme-yat/nomadcoders/2022/07/29/VanillaJS_tutorial2.html" rel="alternate" type="text/html" title="JS 입문 2" /><published>2022-07-29T00:00:00+00:00</published><updated>2022-07-29T00:00:00+00:00</updated><id>https://navongs.github.io/jekyll-theme-yat/nomadcoders/2022/07/29/VanillaJS_tutorial2</id><content type="html" xml:base="https://navongs.github.io/jekyll-theme-yat/nomadcoders/2022/07/29/VanillaJS_tutorial2.html"><![CDATA[<h2 id="link-js-with-html">Link JS with HTML</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">title</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">title</span><span class="p">);</span>
+
+<span class="nx">title</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">New Text</span><span class="dl">"</span><span class="p">;</span></code></pre></figure>
+
+<p>Object “Document” let JS be able to access HTML elements.<br />
+<strong>getElementByID, getElementByClassname, getElementByTagname.. etc</strong></p>
+
+<p>Nomad’s Suggestion : <strong>querySelector, querySelectorAll</strong></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">title</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">qeurySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">div.class_name:first-child h1</span><span class="dl">"</span><span class="p">);</span>
+<span class="c1">//Maybe I can erase 'div'</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">title</span><span class="p">);</span>
+<span class="nx">title</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">new_text</span><span class="dl">"</span><span class="p">;</span></code></pre></figure>
+
+<p>We can use ‘console’ object to check condition of object: console.log, console.dir, etc…</p>
+
+<h2 id="event-check">Event check</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">handleTitleClick</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">title was clicked!</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">title</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">title Clicked!</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">title</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//changing CSS w/ JS</span>
+    
+<span class="p">}</span>
+
+
+<span class="nx">title</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">handleTitleClick</span><span class="p">);</span></code></pre></figure>
+
+<p>We can ‘listen’ events of HTML: name of properties starts with ‘on’. Name of events can be also found googling ‘Web APIs’.</p>
+
+<p>Anothe way to check event is using <em>oneventname</em> properties.
+But handling branch with changing classname can make some problem: cause it loses previous name.</p>
+
+<p><strong>Use CSS class to toggle</strong></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">handleTitleClick</span><span class="p">(){</span>
+    <span class="kd">const</span> <span class="nx">clickedClass</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">clicked</span><span class="dl">"</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">h1</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="nx">clickedClass</span><span class="p">)){</span>
+        <span class="nx">h1</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">clickedClass</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span><span class="p">{</span>
+        <span class="nx">h1</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">clickedClass</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+<span class="p">}</span>
+
+
+<span class="nx">h1</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">handleTitleClick</span><span class="p">);</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">h1</span><span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.some</span><span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span><span class="m">#ff00ff</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.clicked</span><span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#00aaaa</span><span class="p">;</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'Courier New'</span><span class="p">,</span> <span class="n">Courier</span><span class="p">,</span> <span class="nb">monospace</span><span class="p">;</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="n">color</span> <span class="m">0.5s</span> <span class="n">ease-in-out</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><em>※When other settings are the same, CSS class below is applied.</em></p>]]></content><author><name>Navongs</name></author><category term="NomadCoders" /><category term="JS" /><category term="Nomad Coder" /><category term="Web" /><summary type="html"><![CDATA[Link JS with HTML]]></summary></entry><entry><title type="html">JS 입문</title><link href="https://navongs.github.io/jekyll-theme-yat/nomadcoders/2022/07/28/VanillaJS_tutorial.html" rel="alternate" type="text/html" title="JS 입문" /><published>2022-07-28T00:00:00+00:00</published><updated>2022-07-28T00:00:00+00:00</updated><id>https://navongs.github.io/jekyll-theme-yat/nomadcoders/2022/07/28/VanillaJS_tutorial</id><content type="html" xml:base="https://navongs.github.io/jekyll-theme-yat/nomadcoders/2022/07/28/VanillaJS_tutorial.html"><![CDATA[<h2 id="type-of-variables">Type of Variables</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">editable</th>
+      <th style="text-align: left">etc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">var</td>
+      <td style="text-align: left">editable</td>
+      <td style="text-align: left">.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">let</td>
+      <td style="text-align: left">editable</td>
+      <td style="text-align: left">.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">const</td>
+      <td style="text-align: left">uneditable</td>
+      <td style="text-align: left">.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="various-form-of-data-container">Various form of data container</h2>
+<p>array(list) : classic array<br />
+object : similar with class<br />
+function : classic function</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">array1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">];</span>
+<span class="kd">const</span> <span class="nx">object1</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">property1</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="na">property2</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">property3</span> <span class="p">:</span> <span class="mf">1.5</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">func1</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">a</span><span class="o">*</span><span class="nx">b</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">object2</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">prop</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">){</span>
+        <span class="k">return</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span></code></pre></figure>]]></content><author><name>Navongs</name></author><category term="NomadCoders" /><category term="JS" /><category term="Nomad Coder" /><category term="Web" /><summary type="html"><![CDATA[Type of Variables]]></summary></entry></feed>
