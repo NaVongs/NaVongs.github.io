@@ -3,3 +3,5 @@
 .sass-cache
 _site
 Gemfile.lock
+_posts_ex
+_post_trash
